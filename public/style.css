@@ -1,0 +1,490 @@
+*, *:before, *:after {
+    box-sizing: border-box;
+  }
+
+@keyframes bounce {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-2.4vh); }
+}
+
+@keyframes bounce-cloud {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-1.6vh); }
+}
+
+body {
+    font-family: Kalam, Arial, cursive, sans-serif;
+    text-align: center;
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* INDEX */
+.main-index {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.left-half,
+.right-half {
+    width: 50%;
+    height: 100vh;
+}
+
+.left-half {
+    background: url("img/main_page_left_girl.png") bottom no-repeat #cfeffc;
+    background-size: contain;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.logo {
+    margin-top: 6vh;
+}
+
+.logo-img {
+    width: 80%;
+    height: auto;
+}
+
+.cloud-index {
+    background: url("img/cloud_1.png") no-repeat center;
+    background-size: 100% 100%;
+    margin-top: 4vh;
+    width: 65%;
+    padding: 7vh;
+    font-size: 2vw;
+    display: inline-block;
+}
+
+.arrow-down {
+    display: none;
+    color: #fff;
+}
+
+.right-half {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: url("img/lady_hint.png") bottom right no-repeat,
+    url("img/main_page_left.png") bottom no-repeat #cfeffc;
+    background-size: 45%, contain;
+    ;
+}
+
+.login-coin {
+    display: block;
+    width: 20vw;
+    height: 20vw;
+    line-height: 21vw;
+    background: url("img/coin.png") no-repeat;
+    background-size: contain;
+    border-radius: 50%;
+    font-family: "Luckiest Guy", cursive;
+    font-size: 4.5vw;
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+/* CROSSROAD */
+
+.crossroad {
+    width: 100vw;
+    height: 100vh;
+    background: url("img/lady_cross.png") bottom center no-repeat,
+    url("img/cross_bg.png") bottom repeat-x #cfeffc;
+    background-size: 33vh, 63vh;
+    padding-top: 3vh;
+}
+
+.logo-crs {
+    margin: 0 0 4vh;
+}
+
+.logo-img-crs {
+    width: 30vh;
+    height: auto;
+}
+
+.cloud-crs {
+    width: 50%;
+    padding: 6vh;
+    background: url("img/cloud_1.png") no-repeat center;
+    background-size: 100% 100%;
+    margin: 0;
+    display: inline-block;
+    color: #222;
+    text-decoration: none;
+}
+
+.crs-menu {
+    width: 30%;
+}
+
+.land-of-spend .cloud-crs {
+    margin-left: 10vw;
+}
+
+.land-of-spend {
+    margin-bottom: 5vh;
+}
+
+.go-to-goal .cloud-crs,
+.land-of-spend .cloud-crs {
+    padding: 7vh;
+    font-size: 4.7vh;
+    animation: bounce-cloud 1s infinite alternate;
+}
+
+.go-to-goal .cloud-crs {
+    animation-delay: .7s;
+    margin-right: 10vw;
+}
+
+#seen-advice {
+    display: inline-block;
+    color: #4ED164;
+    opacity: 1;
+    transition: opacity 1s;
+}
+
+#seen-advice:hover {
+    cursor: pointer;
+}
+
+#seen-advice.hidden-seen {
+    opacity: 0;
+    cursor: default;
+}
+
+#advice {
+    font-size: 3.7vh;
+}
+
+#advice-content {
+    margin-top: 0 0 1.5vh;
+}
+
+/* DASHBOARD */
+.dashboard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.expenses-table {
+    background: #23bf76;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 3% 0;
+    color: #fff;
+}
+
+#expenses {
+    border-collapse: collapse;
+    width: 540px;
+    font-size: 20px;
+}
+
+#expenses td {
+    height: 7vh;
+    padding: 7px;
+}
+
+#expenses tr {
+    border-top: 2px solid #fff;
+}
+
+#expenses tr:last-child {
+    border-bottom: 2px solid #fff;
+}
+
+.spend {
+    background: #f45d5d;
+}
+
+.chart {
+    width: 100%;
+    background: url("img/lady_side.png") bottom right no-repeat,
+    url("img/cross_bg.png") bottom repeat-x #cfeffc;
+    background-size: 10%, contain;
+    display: flex;
+    justify-content: center;
+}
+
+.spend-form {
+    background: #cfeffc;
+    width: 100%;
+    padding-top: 4vh;
+}
+
+.spend-input {
+    margin: 3vh;
+}
+
+.spend-input input {
+    width: 190px;
+    font-size: 40px;
+    text-align: center;
+    border:none;
+}
+
+.note input {
+    width: 280px;
+    font-size: 26px;
+}
+
+#submit {
+    width: 50px;
+    height: auto;
+    background: #fff;
+    border-radius: 50%;
+}
+
+#submit:hover {
+    cursor: pointer;
+    filter: brightness(92%);
+}
+
+.credit-checkbox {
+    font-size: 34px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.chart-wrapper {
+    width: 350px;
+    height: 400px;
+    display: block;
+}
+
+.logo-dash {
+    margin-bottom: 4vh;
+}
+
+input.apple-switch {
+    position: relative;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    outline: none;
+    width: 100px;
+    height: 60px;
+    background-color: #ffffff;
+    border: 2px solid #D9DADC;
+    border-radius: 55px;
+    box-shadow: inset -40px 0 0 0 #ffffff;
+    transition-duration: 150ms;
+    margin: 0 2vw;
+}
+
+input.apple-switch:after {
+    content: "";
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 52px;
+    height: 52px;
+    background-color: transparent;
+    border-radius: 50%;
+    box-shadow: 2px 4px 6px rgba(0,0,0,0.2);
+}
+
+input.apple-switch:checked {
+    border-color: #4ED164;
+    box-shadow: inset 40px 0 0 0 #4ED164;
+}
+
+input.apple-switch:checked:after {
+    left: 40px;
+    box-shadow: -2px 4px 3px rgba(0,0,0,0.05);
+}
+
+/* GOALs */
+
+.goal-input {
+    margin-bottom: 2vh;
+}
+
+.goal-input:last-child {
+    margin-bottom: 0;
+}
+
+.goal-input input {
+    font-size: 30px;
+    width: 320px;
+}
+
+.goal-form {
+    margin: 3vh 0;
+}
+
+.goal-name {
+    font-size: 28px;
+    color: #444;
+}
+
+#form-section {
+    margin: 3vh 0 4vh;
+}
+
+#main-goal .cloud-crs {
+    width: 30%;
+    margin-bottom: 2vh;
+}
+
+.goal-lady {
+    height: 27vh;
+    background: url("img/lady_cross.png") bottom center no-repeat;
+    background-size: contain;
+}
+
+/* QUERIES */
+
+@media all and (max-width: 1024px) {
+    .main-index {
+        flex-direction: column;
+    }
+
+    .left-half,
+    .right-half {
+        width: 100%;
+    }
+
+    .left-half {
+        height: 75vh;
+        justify-content: space-between;
+    }
+
+    .right-half {
+        height: 40vh;
+        background: url("img/lady_hint.png") bottom right no-repeat #23bf76;
+        background-size: 30%;
+    }
+
+    .login-coin {
+        width: 36vw;
+        height: 36vw;
+        line-height: 37vw;
+        font-size: 6.9vw;
+    }
+
+    .arrow-down {
+        display: inline-block;
+        width: 10vw;
+        height: auto;
+        animation: bounce .5s infinite alternate;
+    }
+
+    .arrow-down:hover {
+        cursor: pointer;
+    }
+
+    .cloud-index {
+        margin: 0 0 15vh; /*9vw*/
+        font-size: 3.5vh;
+        padding: 5vh;
+    }
+
+    .cloud-crs {
+        width: 85%;
+        padding: 6vh 4vh;
+    }
+
+    #expenses {
+        width: 100vw;
+        font-size: 38px;
+    }
+
+    .spend-input input {
+        width: 50vw;
+        font-size: 8vw;
+        line-height: 8vw;
+    }
+
+    .note input {
+        width: 70vw;
+        font-size: 5vw;
+        line-height: 5vw;
+    }
+
+    #submit {
+        width: 17vw;
+        height: auto;
+    }
+
+    input.apple-switch {
+        width: 200px;
+        height: 120px;
+        border: 4px solid #D9DADC;
+        border-radius: 63px;
+        box-shadow: inset -80px 0 0 0 #ffffff;
+    }
+
+    input.apple-switch:after {
+        top: 4px;
+        left: 4px;
+        width: 104px;
+        height: 104px;
+    }
+
+    input.apple-switch:checked {
+        box-shadow: inset 80px 0 0 0 #4ED164;
+    }
+
+    input.apple-switch:checked:after {
+        left: 80px;
+    }
+
+    .chart-wrapper {
+        width: 525px;
+        height: 600px;
+    }
+
+    .chart {
+        background-size: 30%, contain;
+    }
+
+    .goal-input input {
+        font-size: 44px;
+        width: 70%;
+    }
+
+    .goal-name {
+        font-size: 60px;
+        margin-bottom: 2.5vh;
+    }
+
+    #form-section {
+        margin: 1vh 0 4vh;
+    }
+
+    .credit-checkbox {
+        font-size: 50px;
+    }
+
+    #main-goal .cloud-crs {
+        width: 100%;
+    }
+
+}
+
+@media all and (max-width: 600px) {
+    .login-coin {
+        width: 40vw;
+        height: 40vw;
+        line-height: 42vw;
+        font-size: 8.5vw;
+    }
+
+    .right-half {
+        background: url("img/lady_hint.png") bottom right no-repeat #23bf76;
+        background-size: 38%;
+    }
+}

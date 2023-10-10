@@ -1,0 +1,32 @@
+</head>
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KBB85VX"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <section class="main-index">
+        <section class="left-half">
+            <p class="logo">
+                <img src="img/moneasy_cloud.png" alt="moneasy" class="logo-img">
+            </p>
+            <p class="cloud-index">
+                Hey! Come with me to the adventure to collect your treasure.
+            </p>
+            <p class="arrow-container">
+                <img src="img/arrow_down.svg" class="arrow-down">
+            </p>
+        </section>
+        <section class="right-half">
+            <a href="auth/google" class="login-coin">Login</a>
+        </section>
+    </section>
+    <script>
+    $(function(){
+        $(".arrow-container").click(function() {
+            document.querySelector('.right-half').scrollIntoView({ 
+                behavior: 'smooth'
+            });
+        });
+    })
+    </script>
+</body>

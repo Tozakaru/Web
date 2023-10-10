@@ -1,0 +1,32 @@
+frontend pre login
+zmensit / inak vyriesit obrazky - prilis su velke a dlho sa stahuju
+empty states pre goals a spending
+feedback nacitavania pri removovani expense na dashboard
+feedback nacitavania pri pridavani expense na dashboard
+hover na remove na dashboarde
+fade in fade out text bubliny na crossroad
+fix and stardardize personalized messages na goals (prip. na crossroad)
+hover na linky na crossroad
+animation furikov na prichode do goal
+hover na add na goal
+tweak goal visuals
+waiting kolecko kym db hlada hodnoty na goal
+waiting kolecko kym db hlada hodnoty na dashboard
+better transition between expense-income na dashboard
+tooltipy na logo "spat na index" abo daco take
+pri updatovani table na dashboard by malo najprv vytvorit uplne novy a potom vymzat stary aby user nestratil scroll
+
+## design
+all clouds
+background: url(img/cloud_1.png) center no-repeat;
+background-size: 100% 100%;
+favicon
+kyvanie rukou
+
+## new features
+prepinanie mesiacov na dashboard
+?vyhladavanie na dashboard
+export pre rodicov
+parental control
+personalizovane advice aj podla veku
+sposob ako sa daju zobrazit vsetky advice

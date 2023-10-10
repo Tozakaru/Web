@@ -1,0 +1,116 @@
+</head>
+
+<body class="dashboard">
+
+    <section class="spend-form">
+        <p class="logo-crs logo-dash">
+            <a href="crossroad"><img src="img/moneasy_cloud.png" alt="moneasy" class="logo-img-crs"></a>
+        </p>
+        <form method="GET" action="/sql">
+            <div class="credit-checkbox">
+                <!-- <label for="credit">Income</label> -->
+                Expense
+                <input type="checkbox" name="credit" class="apple-switch">
+                Income
+            </div>
+            <div class="spend-input">
+                <input type="number" placeholder="amount" name="amount">
+            </div>
+            <div id='radio-data'>
+                <!-- tu pojdu data  radiobox-->
+            </div>
+            <div class="spend-input note">
+                <input type="text" placeholder="note" name="note">
+            </div>
+        </form>
+        <img src="img/minus.svg" id="submit"></img>
+    </section>
+
+    <section class="chart">
+        <div class="chart-wrapper">
+            <!-- v tomto div-e je pie chart, velkost pieChartu nastavovat cez tento div -->
+            <canvas id='pieChart'>
+            </canvas>
+        </div>
+    </section>
+
+    <section class="expenses-table">
+        <table id="expenses">
+            <thead></thead>
+            <tbody>
+
+            </tbody>
+        </table>
+    </section>
+
+    <script src="dashboard-js/ajax.js"></script>
+    <script src="dashboard-js/piechart.js"></script>
+    <script>
+        var categories = JSON.parse('<%- JSON.stringify(categories) %>');
+        $(function () {
+
+            //NOTE(DanoB) adding ajax onclick listener
+            $("#submit").on("click", function () {
+                post();
+            })
+
+            $("form input[type=checkbox]").change(onFormChange);
+            $("form").on("reset", () => {
+                $("form input[type=checkbox]").prop("checked", false);
+                onFormChange();
+            });
+
+            $(document).on('keypress',function(e) {
+                if(e.which == 13) {
+                    post();
+                }
+            });
+
+            let _ = function (e) {
+                if (e.which === 1) {
+                    this.click();
+                }
+            }
+            $(".apple-switch").on("mousedown", _);
+            $(".apple-switch").on("mouseup", _);
+
+            get();
+            select();
+        });
+
+        function onFormChange() {
+            select();
+            if ($("form input[type=checkbox]").is(":checked")) {
+                $("#submit").attr("src","img/submit.svg");
+            }
+            else {
+                $("#submit").attr("src","img/minus.svg");
+            }
+        }
+
+        function select() { //NOTE(DanoB) Changes the options in form select
+            let el = $("form #radio-data");
+
+            if (!$("form input[type=checkbox]").is(':checked')) {
+                el.html(`\
+                    <div class='radio-box'>\
+                    <% for (let i = 0; i < expense.length; i++){ const item = expense[i]; %>
+                        <input <% if (i === 0) { %><%-'checked="checked"'%> <% } %>id="<%-item.name%>" type="radio" name="category" value="<%-item.name%>" />\
+                        <label class='label img' for='<%-item.name%>'><img src='<%-item.icon%>' title="<%-item.name%>"></label>\
+                    <% }  %>
+                    </div>\
+                    `);
+
+            } else {
+                el.html(`\
+                    <div class='radio-box'>\
+                    <% for (let i = 0; i < income.length; i++){ const item = income[i]; %>
+                        <input <% if (i === 0) { %><%-'checked="checked"'%> <% } %>id="<%-item.name%>" type="radio" name="category" value="<%-item.name%>" />\
+                        <label class='label img' for='<%-item.name%>'><img src='<%-item.icon%>' title="<%-item.name%>"></label>\
+                    <% }  %>
+                    </div>\
+                    `);
+            }
+        }
+    </script>
+</body>
